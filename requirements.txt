@@ -1,0 +1,4 @@
+pandas
+scikit-learn
+tensorflow-gpu==2.0.0
+deepctr[gpu]

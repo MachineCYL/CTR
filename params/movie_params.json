@@ -1,0 +1,13 @@
+{
+    "label": "label",
+    "sparse_features": [
+        "movieId", "userId", "releaseYear", "movieGenre1", "movieGenre2", "movieGenre3",
+        "userGenre1", "userGenre2", "userGenre3", "userGenre4", "userGenre5"
+    ],
+    "dense_features": [
+        "movieRatingCount", "movieAvgRating", "movieRatingStddev",
+        "userRatedMovie1", "userRatedMovie2", "userRatedMovie3", "userRatedMovie4", "userRatedMovie5",
+        "userRatingCount", "userAvgReleaseYear", "userReleaseYearStddev", "userAvgRating", "userRatingStddev"
+    ]
+}
+
