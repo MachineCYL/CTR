@@ -26,5 +26,5 @@
 
     python train.py --model "xDeepFM" --topic "criteo" \
         --params_file "./params/criteo_params.json" \
-        --train_data "./train_data/criteo_sample.txt" \
+        --train_data "./train_data/criteo_sample.txt"
         
