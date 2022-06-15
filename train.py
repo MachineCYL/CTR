@@ -24,6 +24,8 @@ def parse_argvs():
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--dnn_dropout", type=float, default=0.2)
     parser.add_argument("--dnn_use_bn", type=bool, default=True)
+    parser.add_argument("--export_version", type=int, default=1)
+
     args = parser.parse_args()
     print('[input params] {}'.format(args))
 
@@ -44,6 +46,7 @@ if __name__ == "__main__":
     epochs = args.epochs
     dnn_dropout = args.dnn_dropout
     dnn_use_bn = args.dnn_use_bn
+    export_version = args.export_version
 
     data = pd.read_csv(train_data, sep=train_data_sep)
 
@@ -139,3 +142,10 @@ if __name__ == "__main__":
     print("[test] Accuracy: {} ".format(round(accuracy_score(test[target].values, pred_ans >= 0.5), 4)))
     print("[test] AUC: {} ".format(round(roc_auc_score(test[target].values, pred_ans), 4)))
     print("[test] classification_report: \n{} ".format(classification_report(test[target].values, pred_ans >= 0.5, digits=4)))
+
+    # 7. export train model
+    model.summary()
+    tf.compat.v1.saved_model.save(
+        obj=model,
+        export_dir='./export_model/{}-{}/{}'.format(topic, use_model, export_version),
+        signatures=None)

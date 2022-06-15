@@ -10,6 +10,7 @@
 - 仅需提供训练数据，并通过简单的配置，即可实现CTR模型的训练。
 - 支持模型 DeepFM、xDeepFM、DCNMix、DeepFEFM、DIFM 等。
 - 最优模型自动保存，输出详细评估结果。
+- 支持导出 SavedModel 格式模型，方便 TF Serving 部署。
 - 项目依赖见 requirements.txt
  
 ## 【运行指令及参数】
